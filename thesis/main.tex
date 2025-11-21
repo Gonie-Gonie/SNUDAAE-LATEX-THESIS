@@ -1,0 +1,201 @@
+
+% ---------------------------------------------------------------------------- %
+%                        DOCUMENT DEFINITION AND COVERS                        %
+% ---------------------------------------------------------------------------- %
+
+\documentclass[11pt, oneside]{report}  % 기본 글꼴 (항상 첫 줄)   article로 바꿔야할듯???
+\input{preamble.tex}
+\input{config.tex}
+
+% ======= 문서작성 시작 =======
+\begin{document}
+
+% 문서속성
+\hypersetup{
+  pdftitle={Ph.D Thesis},
+  pdfauthor={Name},
+  pdfkeywords={},
+  bookmarksopen=true
+}
+
+% ======= Title Page (Cover, 외표지) =======
+\begin{titlepage}
+  \begin{center}
+    {\fontsize{16pt}{27.2pt}\textbf{Ph.D. Dissertation of Engineering}}\\
+      \vspace*{2cm}   % \vspace*{4em}   %\vspace*{4\basegap}
+    {\fontsize{22pt}{37.4pt}\selectfont\textbf{\EnglishTitle}}\\   % Title of your Dissertation
+      \vspace*{4\basegap}   %{\fontsize{16pt}{20pt}\selectfont - Subtitle of your Dissertation -}\\
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{\KoreanTitle}}\\   % 국문 제목 작성
+      %\vspace*{5\basegap}   
+      \vfill
+    {\fontsize{14pt}{23.8pt}\selectfont\textbf{\PublishMonth}}\\   % February or August
+      \vspace*{4cm}   
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{Graduate School of Engineering}}\\
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{Seoul National University}}\\
+    {\fontsize{14pt}{23.8pt}\selectfont\textbf{Architecture and Architectural Engineering Major}}\\   % Department Major
+      \vspace*{1\basegap}   
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{\MyEnglishName}}   % Full Name
+      \vspace*{3cm}   
+
+  \end{center}
+\end{titlepage}
+
+% ======= Title Page (Inner Title Cover, 속표지) =======
+% 외표지와 동일하게 작성한다.
+\begin{titlepage}
+  \begin{center}
+    {\fontsize{16pt}{27.2pt}\textbf{Ph.D. Dissertation of Engineering}}\\
+      \vspace*{2cm}   % \vspace*{4em}   %\vspace*{4\basegap}
+    {\fontsize{22pt}{37.4pt}\selectfont\textbf{\EnglishTitle}}\\   % Title of your Dissertation
+      \vspace*{4\basegap}   %{\fontsize{16pt}{20pt}\selectfont - Subtitle of your Dissertation -}\\
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{\KoreanTitle}}\\   % 국문 제목 작성
+      %\vspace*{5\basegap}   
+      \vfill
+    {\fontsize{14pt}{23.8pt}\selectfont\textbf{\PublishMonth}}\\   % February or August
+      \vspace*{4cm}   
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{Graduate School of Engineering}}\\
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{Seoul National University}}\\
+    {\fontsize{14pt}{23.8pt}\selectfont\textbf{Architecture and Architectural Engineering Major}}\\   % Department Major
+      \vspace*{1\basegap}   
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{\MyEnglishName}}   % Full Name
+      \vspace*{3cm}   
+
+  \end{center}
+\end{titlepage}
+
+% ======= Approval Page (인준지) =======
+\begin{titlepage}
+  \begin{center}
+    {\fontsize{22pt}{37.4pt}\selectfont\textbf{\EnglishTitle}}\\   % Title of your Dissertation
+      \vspace*{1\basegap}
+    {\fontsize{14pt}{23.8pt}\selectfont\textbf{Cheol-Soo Park}}\\   % Name of Examiner
+      \vspace*{1\basegap}
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{Submitting a Ph.D. Dissertation of}}\\
+    {\fontsize{14pt}{23.8pt}\selectfont\textbf{Engineering}}\\   % Name of Examiner
+      \vspace*{1\basegap}
+    {\fontsize{14pt}{23.8pt}\selectfont\textbf{\PublishMonth}}\\   % February or August
+      \vspace*{1\basegap}
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{Graduate School of Engineering}}\\
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{Seoul National University}}\\
+    {\fontsize{14pt}{23.8pt}\selectfont\textbf{Architecture and Architectural Engineering Major}}\\
+      \vspace*{1\basegap}
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{\MyEnglishName}}   % Full Name
+      \vspace*{1\basegap}\\
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{Confirming the Ph.D. Dissertation written by}}\\
+    {\fontsize{16pt}{27.2pt}\selectfont\textbf{\MyEnglishName}}   % Full Name
+    \vfill
+    {\fontsize{14pt}{23.8pt}\selectfont\textbf{\PublishMonth}}\\   % February or August
+      \vspace*{1\basegap}
+    \renewcommand{\arraystretch}{0.7}  % 행 간격 조절 (임의로 넣음 byKS)
+    \newcommand{\signatureline}[1]{\makebox[6cm]{\centering\underline{\makebox[6cm]{\hfill #1 \hfill}}}}
+    {
+    \fontsize{14pt}{23.8pt}\selectfont
+    \begin{tabular}{@{} l c c @{}} % 3열: 왼쪽, 가운데, 오른쪽 정렬
+      Chair       & \signatureline{\chairName}      & (Seal) \\
+      Vice Chair  & \signatureline{\viceChairName}  & (Seal) \\
+      Examiner    & \signatureline{\examinerAName}  & (Seal) \\
+      Examiner    & \signatureline{\examinerBName}  & (Seal) \\
+      Examiner    & \signatureline{\examinerCName}  & (Seal) \\
+    \end{tabular}
+    \vspace*{2cm}  
+  }
+  \end{center}
+\end{titlepage}
+
+
+% ---------------------------------------------------------------------------- %
+%                ABSTRACT, LIST OF CONTENTS, FIGURE, AND TABLES                %
+% ---------------------------------------------------------------------------- %
+
+% ======= Abstract =======
+\newpage
+\begin{center}
+  {\fontsize{20pt}{34pt}\selectfont\textbf{Abstract}}
+\end{center}
+\addcontentsline{toc}{chapter}{Abstract}   % Content(목차)에 추가
+\setlength{\parindent}{2em}  % 들여쓰기 2em
+\setstretch{1.7}             % 줄간격 170%
+\textbf{Keyword}: \EnglishKeywords\\
+\textbf{Student Number}: \StudentNumber
+
+\EnglishAbstract
+
+% ======= Table of Contents =======
+\newpage
+\begin{center}
+  {\fontsize{16pt}{27.2pt}\selectfont\bfseries Table of Contents}
+\end{center}
+    \vspace{-9em}  % 제목과 항목 사이 간격 조절 (임의조절)
+\renewcommand{\contentsname}{}  % 자동 제목 비우기
+\addcontentsline{toc}{chapter}{Table of Contents}   % Content(목차)에 추가
+\begingroup
+  \fontsize{12pt}{20.4pt}\selectfont  % 글자 크기 12pt, 줄간격 20.4pt (170%)
+  \setstretch{1.7}                    % 줄간격 1.7로 고정
+  \tableofcontents
+\endgroup
+
+% ======= List of Figures =======
+\newpage
+\begin{center}
+  {\fontsize{16pt}{27.2pt}\selectfont\bfseries List of Figures}
+\end{center}
+    \vspace{-9em}  % 제목과 항목 사이 간격 조절 (임의조절)
+\renewcommand{\listfigurename}{}  % 자동 제목 비우기
+\addcontentsline{toc}{chapter}{List of Figures}   % Content(목차)에 추가
+\begingroup
+  \fontsize{12pt}{20.4pt}\selectfont  % 글자 크기 12pt, 줄간격 20.4pt (170%)
+  \setstretch{1.7}                    % 줄간격 1.7로 고정
+  \listoffigures
+\endgroup
+
+% ======= List of Tables =======
+\newpage
+\begin{center}
+  {\fontsize{16pt}{27.2pt}\selectfont\bfseries List of Tables}
+\end{center}
+    \vspace{-9em}  % 제목과 항목 사이 간격 조절 (임의조절)
+\renewcommand{\listtablename}{}  % 자동 제목 비우기
+\addcontentsline{toc}{chapter}{List of Tables}   % Content(목차)에 추가
+\begingroup
+  \fontsize{12pt}{20.4pt}\selectfont  % 글자 크기 12pt, 줄간격 20.4pt (170%)
+  \setstretch{1.7}                    % 줄간격 1.7로 고정
+  \listoftables
+\endgroup
+
+% ======= Switch to Arabic numbering for main chapters =======
+\cleardoublepage
+\pagenumbering{arabic}
+
+% ---------------------------------------------------------------------------- %
+%                                  MAIN PAGES                                  %
+% ---------------------------------------------------------------------------- %
+
+\setlength{\emergencystretch}{3em} % 간격 여유있게 줄바꾸기
+% ======= Main Chapters =======
+\input{body.tex}
+
+% ---------------------------------------------------------------------------- %
+%                             REFERENCE AND OTHERS                             %
+% ---------------------------------------------------------------------------- %
+
+% ======= Reference =======
+\newpage
+\titlespacing*{\chapter}{0pt}{-3em}{1em}   % left, before, after
+\renewcommand{\bibname}{\normalfont\centering\fontsize{16pt}{27.2pt}\selectfont\textbf{References}}  % 'Bibliography'→'References로 변경
+\addcontentsline{toc}{chapter}{Reference}  % 목차에 추가 
+\begingroup
+\setstretch{1.0} % ← 줄간격 조정 (기본보다 약간 좁게, 예: 1.0~1.1)
+\printbibliography[title={References}] % biblatex : \parencite{}: (Author, Year), \textcite{}: Author (Year)
+\endgroup
+% ======= Korean Abstract =======
+\newpage
+\begin{center}
+  {\fontsize{16pt}{27.2pt}\selectfont\textbf{국문초록}}
+\end{center}
+\addcontentsline{toc}{chapter}{국문초록}
+\KoreanAbstract
+
+\noindent\textbf{Keyword}: \KoreanKeywords\\
+\textbf{Student Number}: \StudentNumber
+% ======= The END =======
+\end{document}

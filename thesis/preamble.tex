@@ -1,0 +1,235 @@
+% SNU Ph.D. Dissertation Template (English) — Updated to official 규격 (4×6배판)
+
+% Source by 조형곤
+% Revised by 박경수, 조형곤, 박철홍
+
+% ---------------------------------------------------------------------------- %
+%                                   PACKAGES                                   %
+% ---------------------------------------------------------------------------- %
+
+
+% ======= 페이지 레이아웃 =======
+\usepackage[b5paper,
+            top=2cm, bottom=1.5cm,
+            left=3cm, right=3cm,
+            headheight=15pt, headsep=15pt, footskip=15pt]{geometry}
+
+% ======= 인코딩 및 글꼴 설정 =======
+\usepackage[utf8]{inputenc}            % 입력 인코딩
+\usepackage[T1]{fontenc}               % 출력 인코딩 (글꼴 인코딩)
+\usepackage{kotex}                     % 한글 지원
+\usepackage{newtxtext}                 % 영문 기본 글꼴 (Times New Roman (for English))
+
+% ======= 참고문헌 =======
+% \usepackage[round]{natbib}             % 참고문헌 인용 형식 (저자, 연도) (기존은 [숫자]임)
+\usepackage[
+  backend=biber,
+  style=apa,   % apa   authoryear   ext-authoryear
+  citestyle=apa,
+  sorting=nyt,
+  maxcitenames=1,   % 인용에서 보여줄 최대 저자 수
+  mincitenames=1,   % 최소 두 명은 항상 이름 표시
+  maxbibnames=99,   % 참고문헌 목록에 표시할 저자 수 (가능한 많이 유지)
+  uniquename=false,
+]{biblatex}
+
+\addbibresource{reference.bib}
+
+% 참고문헌 번호를 [1] 형식으로 보이게 조정
+\DeclareFieldFormat{labelnumberwidth}{[#1]}
+\renewcommand*{\labelnamepunct}{\addcolon\space}   % 강제로 번호 달기
+\defbibenvironment{bibliography}
+  {\begin{enumerate}
+      \setlength{\labelwidth}{1.5em}
+      \setlength{\leftmargin}{\labelwidth}
+      \setlength{\labelsep}{0.5em}
+      \setlength{\itemsep}{\bibitemsep}
+      \setlength{\parsep}{\bibparsep}
+   }
+  {\end{enumerate}}
+  {\item}
+
+
+% ======= 시각 요소: 그림, 색상 =======
+\usepackage{graphicx}                  % 그림 포함
+\usepackage{xcolor}                    % 색상 지원
+\usepackage[labelfont=bf, labelsep=period]{caption}   % : 대신 . 사용
+\graphicspath{{./figures/}}            % 그림 경로 설정
+\usepackage{subcaption}                % n by n 형식의 그림 배열
+\usepackage{placeins}
+
+% ======= 문단, 줄간격 등 레이아웃 설정 =======
+\usepackage{setspace}                  % 줄간격 조정
+\usepackage{indentfirst}               % 첫 문단 들여쓰기. 만약 개별문단별로 적용하려면 \indent 사용
+\setstretch{1.7}                       % 기본 줄간격 1.7배 (170%)
+\setlength{\parskip}{0.6em}            % 단락 사이 (세로) 여백
+\setlength{\parindent}{2em}            % 단락 들여쓰기
+
+% ======= 제목/번호/목차 관련 =======
+\usepackage{titlesec}                  % 제목 포맷 커스텀
+\usepackage{fancyhdr}                  % 헤더/푸터
+\usepackage{tocloft}                   % 목차 스타일
+
+% ======= 수식 및 수학 패키지 =======
+% \usepackage{amsmath}                   % 수학 수식
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{mathtools}  % for \coloneqq
+% \numberwithin{equation}{chapter}       % 챕터별 수식 번호 (1.1)
+% \renewcommand{\theequation}{Equation \thechapter.\arabic{equation}}   % (Equation 1.1)
+
+% --- 표 관련 패키지 ---
+\usepackage{booktabs}                  % \toprule 등 고급 표
+\usepackage{longtable}                 % 페이지 넘기는 표
+\usepackage{tabularx}                  % 가변 폭 표
+\usepackage{multirow}                  % 셀 병합
+\usepackage{makecell}                  % 셀 내 줄바꿈
+\usepackage[tableposition=top]{caption}% 표 캡션 위 고정
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+% ======= 참조 패키지 =======
+\usepackage[hidelinks]{hyperref}       % 하이퍼링크
+\usepackage[capitalise]{cleveref}      % cref 자동 참조
+\usepackage{footmisc}                  % 각주 설정
+
+% ======= 기타 디자인 =======
+\usepackage{tcolorbox}                 % 박스 디자인
+
+% ======= 코드류 =======
+\usepackage{listings}                  % 코드삽입
+\usepackage{lipsum}                    % 더미문장 \lipsum[1-2]
+
+
+% ---------------------------------------------------------------------------- %
+%                                    STYLE                                     %
+% ---------------------------------------------------------------------------- %
+
+% ======= Title formatting =======
+\titleformat{\chapter}[hang]{\bfseries\LARGE}{Chapter\ \thechapter.}{1em}{}     % 장 제목
+\titleformat{\section}[hang]{\bfseries\Large}{\thesection}{1em}{}               % 절 제목
+\newcommand{\sectionbreak}{\clearpage}
+\titleformat{\subsection}[hang]{\bfseries\large}{\thesubsection}{1em}{}    % 절의 하위제목
+\titleformat{\subsubsection}[hang]{\bfseries\normalsize}{\thesubsection}{1em}{} % 하위제목의 하위제목
+\titleformat{\paragraph}[hang]{\bfseries\normalsize}{\thesubsection}{1em}{}     % 소단락 제목
+\titleformat{\subparagraph}[runin]{\bfseries\normalsize}{\thesubsection}{1em}{}  % 소단락의 하위제목
+
+% ======= 서울대 맞춤 폰트 스타일 (필요시) =======
+% \newcommand{\이름}[인자 수]{내용}
+% \newcommand{\UnnumberedChapter}[1]{\fontsize{11pt}{18.7pt}\selectfont\textbf{#1}\\}   % {글꼴크기}{줄간격} 마지막 \\는 Enter 역할
+\newcommand{\CustomToC}[1]{%
+  \begingroup
+    \fontsize{12pt}{20.4pt}\selectfont
+    \setstretch{1.7}
+    #1
+  \endgroup
+}   % 목차(Table of Contents) 스타일
+\newlength{\basegap}        % 새 길이 변수를 선언 (표지에서 줄띄어쓰기용)
+\setlength{\basegap}{14pt}  % 해당 변수에 14pt를 지정
+
+% ======= Roman page numbers for frontmatter =======
+\pagenumbering{roman}
+
+% ======= Header/Footer =======
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}  % Footer centered
+
+
+% ---------------------------------------------------------------------------- %
+%                           TABLE AND FIGURE TEMPLATE                          %
+% ---------------------------------------------------------------------------- %
+
+\newcommand{\TableUppersideBlank}{10pt}
+\newcommand{\TableLowersideBlank}{10pt}
+\newcommand{\TableArrayStretch}{1.5}
+\setlength{\belowcaptionskip}{\TableUppersideBlank}
+\setlength{\textfloatsep}{\TableLowersideBlank}
+\setlength{\LTpre}{\TableUppersideBlank}      % 테이블 위 (본문과의) 간격
+\setlength{\LTpost}{\TableLowersideBlank}     % 테이블 아래 (본문과의) 간격
+
+% --- 함수 1: 내용물 기준 테이블 (tabular) ---
+% 사용법: \newcontenttable[<placement>]{<colspec>}{<caption>}{<label>}{<header-macro>}{<body-macro>}
+% 예시:   \newcontenttable[ht!]{lcr}{캡션}{tab:my}{\myhead}{\mybody}
+% ----------------------------------------------------------------------------
+\newcommand{\newcontenttable}[6][htbp!]{%
+  \begin{table}[#1]
+    \centering
+    \caption{#3}
+    \label{#4}
+    {%
+    \renewcommand{\arraystretch}{\TableArrayStretch}
+    \begin{tabular}{#2}
+      \toprule
+      #5 \\ % 헤더 매크로 확장
+      \midrule
+      #6   % 바디 매크로 확장 (마지막 \\는 바디 매크로 안에 포함되어야 함)
+      \bottomrule
+    \end{tabular}
+    }
+  \end{table}
+}
+
+% --- 함수 2: 좌우 꽉 찬 테이블 (tabularx) ---
+% 사용법: \newfullwidthtable[<placement>]{<colspec>}{<caption>}{<label>}{<header-macro>}{<body-macro>}
+% 예시:   \newfullwidthtable[ht!]{lX}{캡션}{tab:my}{\myhead}{\mybody}
+% ----------------------------------------------------------------------------
+\newcommand{\newfullwidthtable}[6][htbp!]{%
+  \begin{table}[#1]
+    \centering
+    \caption{#3}
+    \label{#4}
+    {% 
+      \renewcommand{\arraystretch}{\TableArrayStretch}
+      \begin{tabularx}{\linewidth}{#2} % \linewidth로 꽉 채움
+      \toprule
+      #5 \\ % 헤더 매크로 확장
+      \midrule
+      #6   % 바디 매크로 확장
+      \bottomrule
+    \end{tabularx}
+    }
+  \end{table}
+}
+
+% --- 함수 3: 페이지가 나뉘는 긴 테이블 (longtable) ---
+% 사용법: \newlongtable{<colspec>}{<caption>}{<label>}{<header-macro>}{<body-macro>}
+% 예시:   \newlongtable{lcr}{캡션}{tab:my}{\myhead}{\mybody}
+% ----------------------------------------------------------------------------
+\newcommand{\newlongtable}[5]{%
+  \centering % longtable은 table 환경 밖에서 centering
+  {%
+  \renewcommand{\arraystretch}{\TableArrayStretch}
+  \begin{longtable}{#1}
+    % --- 첫 페이지 헤더 ---
+    \caption{#2} \label{#3} \\
+    \toprule
+    #4 \\ % 헤더 매크로 확장
+    \midrule
+    \endfirsthead
+    
+    % --- 다음 페이지 헤더 ---
+    \caption[]{#2 (Continued)} \\ % 목차(LoT)에 중복 방지
+    \toprule
+    #4 \\ % 헤더 매크로 확장
+    \midrule
+    \endhead
+
+    % --- 바닥글 ---
+    \bottomrule
+    \multicolumn{\NumCols}{r}{\textit{(Continued on next page)}} \\ % \NumCols는 이 테이블의 열 개수와 일치해야 함
+    \endfoot
+    
+    % --- 마지막 바닥글 ---
+    \bottomrule
+    \endlastfoot
+
+    % --- 본문 ---
+    #5 % 바디 매크로 확장
+  \end{longtable}
+  }
+  
+}
+
+% ---------------------------------------------------------------------------- %
+%                         CUSTOM CODE BOX (listings)               %
+% ---------------------------------------------------------------------------- %

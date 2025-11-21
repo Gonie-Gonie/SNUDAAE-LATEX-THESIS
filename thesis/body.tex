@@ -1,0 +1,204 @@
+
+% ---------------------------------------------------------------------------- %
+%                                 INTRODUCTION                                 %
+% ---------------------------------------------------------------------------- %
+
+\chapter{Introduction}
+
+\section{Research backgrounds}
+
+\subsection{Purpose-driven evolution of building energy simulation tools}
+
+Building energy simulation tools have evolved for decades, from manual calculation methods \parencite{cane1979modified,thom1966normal} to simulation \parencite{crawley2000energy,hittle1978building} and data-driven methods \parencite{rabl1988parameter,ruch1992four}, and recently to large language model based automated methods \parencite{jiang2024eplus,liu2025large}, along with the development of related fields such as gas laws, heat transfer, thermodynamics \parencite{dienel1997heat,mao2013literature,stamper1994ashraes}.
+
+This divergence encapsulates the fundamental trade-off between fidelity and accessibility: dynamic tools continually extend the frontier of precision and control, while steady-state tools consolidate practicality, speed, and comparability for mainstream or regulatory applications (\cref{fig:dynamic-steady-comparison}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{dynamic_steadystate_comparison.png}
+  \caption{Trajectories of dynamic and steady-state simulation tools}
+  \label{fig:dynamic-steady-comparison}
+\end{figure}
+
+\newfullwidthtable{X X}
+  {Table Example}         % caption
+  {tbl:steady-vs-dynamic} % label
+  { % header
+  \multicolumn{1}{c}{\bfseries Steady-state simulator} & 
+  \multicolumn{1}{c}{\bfseries Dynamic simulator}
+  }
+  { % body
+  fast & slow and very slow and hard and slow and hard ans slow and muiltiline \\
+  easy & hard \\
+  }
+
+\subsection{Emerging limits of the steady-state tools under contemporary building trends}
+
+As buildings become lower-load and better insulated, integrate renewables and advanced HVAC (e.g., heat pumps with storage), and operate under occupant and policy driven controls, performance depends on temporal coupling among weather, occupancy, and control actions (start-up/shut-down and part-load behavior, short-term storage, and envelope thermal inertia) (\cref{fig:thermal-balance-comparison}).
+
+\begin{figure}[htbp]
+  \centering
+  \subcaptionbox{Past high-energy buildings\label{fig:thermal-balance-past}}{%
+    \includegraphics{VanDijk1-PastBuilding.png}}
+  \hspace{1em}
+  \subcaptionbox{Current low-energy buildings\label{fig:thermal-balance-current}}{%
+    \includegraphics{VanDijk2-LowEnergyBuilding.png}}
+  \caption{Comparison of thermal balances of past and current buildings \parencite{van2018epb}}
+  \label{fig:thermal-balance-comparison}
+\end{figure}
+
+\subsection{Limitations in widespread adoption of dynamic simulators}
+
+Accordingly, the principal impediments are delineated across three foundational input in the sections that follow: domains—geometry, HVAC systems, and internal loads.
+
+\subparagraph{Geometry}
+
+The result is predictable: rising effort for zone partitioning and boundary conditions, slower iteration, and weakened validation and reproducibility.
+
+\subparagraph{HVAC Systems}
+
+Consequently, QA/QC expands while iteration speed and reproducibility contract.
+
+\subparagraph{Internal Loads}
+
+This combination inflates modeling effort and injects uncertainty that is difficult to audit, eroding credibility and slowing adoption despite the central role of internal loads in performance outcomes.
+
+\section{Thesis organization}
+
+The subsequent chapters are organized as follows:
+
+\begin{itemize}
+  \item \textbf{Chapter 2} ...
+  \item \textbf{Chapter 3} ...
+  \item \textbf{Chapter 4} ...
+  \item \textbf{Chapter 5} ...
+  \item \textbf{Chapter 6} ...
+\end{itemize}
+
+% ---------------------------------------------------------------------------- %
+%                               LITERATURE REVIEW                              %
+% ---------------------------------------------------------------------------- %
+
+\chapter{Previous efforts to ease use of dynamic simulation tools}
+
+
+\section{Lightweighted engines}
+hi
+
+\section{User-friendly interfaces}
+
+clicSAND for OSeMOSYS
+
+\section{Building templates}
+
+Templatized inputs (limited building shapes, ...) for specific building
+
+Urban scale automation??
+
+\section{Automated modelling approaches}
+
+BIM2BEM, LLM
+
+\section{Issues and limitations of the previous efforts}
+hi
+
+% ---------------------------------------------------------------------------- %
+%                                    METHOD                                    %
+% ---------------------------------------------------------------------------- %
+
+\chapter{Normative simplified building components}
+
+\section{Geometry}
+
+\subsection{Definition of simplified geometry}
+hi
+\subsection{Simulation of the simplified geometry model in EnergyPlus}
+hi
+\subsection{Validation for the real-world buildings}
+hi
+
+\section{HVAC systems}
+
+\subsection{Definition of simplified HVAC}
+hi
+\subsection{Definition of normative HVAC}
+hi
+
+\section{Internal loads}
+
+\subsection{Definition of simplified profile}
+hi
+\subsection{Definition of normative profile}
+hi
+
+
+% ---------------------------------------------------------------------------- %
+%                                IMPLEMENTATION                                %
+% ---------------------------------------------------------------------------- %
+
+\chapter{Python-based implementation}
+
+\section{Data hierarchy and conversion procedures}
+
+\subsection{Data hierarchy and classification}
+hi
+\subsection{Hierarchical conversions}
+hi
+
+\section{Building data structure for the simplified normative dynamic simulator}
+
+\subsection{Tree-structured building data}
+hi
+\subsection{Type of the input variables}
+hi
+\subsection{Suggested data structure}
+hi
+
+\section{Python module structure}
+
+\subsection{Functional module classification}
+hi
+\subsection{Api for user}
+hi
+\subsection{Auxiliary modules}
+hi
+
+\section{Algorithms for the data conversions}
+
+\subsection{Building data conversion framework}
+hi
+\subsection{Simplified geometries to idf}
+hi
+\subsection{Simplified normative HVAC systems to idf}
+hi
+\subsection{Simplified or normative profiles to idf}
+hi
+% ---------------------------------------------------------------------------- %
+%                                USER-INTERFACE                                %
+% ---------------------------------------------------------------------------- %
+
+\chapter{User-Interface}
+
+\section{Spreadsheet based interface}
+
+\subsection{Strength and limitations of the spreadsheet}
+hi
+\subsection{Spread-sheet based user input}
+hi
+\subsection{Dedicated launcher for spreadsheet}
+hi
+
+\section{Extensiblity for modern framework based interfaces}
+
+\subsection{Strength of the modern frameworks}
+hi
+\subsection{Example of the React-framework based GUI}
+hi
+
+% ---------------------------------------------------------------------------- %
+%                                  CONCLUSTION                                 %
+% ---------------------------------------------------------------------------- %
+
+\chapter{Conclusion}
+
+
